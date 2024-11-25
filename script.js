@@ -1,18 +1,13 @@
 $(document).ready(function () {
     $(window).scroll(function () {
       //  sticky navbar on scroll script  //
-      if (this.scrollY > 20) {
+      if (this.scrollY > 0) {
         $(".navbar").addClass("sticky");
       } else {
         $(".navbar").removeClass("sticky");
       }
   
-      //  scroll-up button show/hide script  //
-      if (this.scrollY > 500) {
-        $(".scroll-up-btn").addClass("show");
-      } else {
-        $(".scroll-up-btn").removeClass("show");
-      }
+    
     });
   
     //  slide-up script  //
@@ -39,21 +34,18 @@ $(document).ready(function () {
     //  Typing Text Animation  //
   
     var typed = new Typed(".typing", {
-      strings: ["Computer Science Student", "Data Analyst", "Python Developer"],
-      typeSpeed: 100,
+      strings: ["Data Analyst in Certification Process | AI Specialization ", ""],
+      typeSpeed: 80,
       backSpeed: 60,
       loop: true
     });
   
     var typed = new Typed(".typing-2", {
       strings: [
-        "Data Scientist",
-        "Business Intelligence Analyst",
-        "Power BI Developer",
-        "Risk Analyst",
-        "Data Engineer"
+        "Data Analyst in Certification Process | AI Specialization ",
+        
       ],
-      typeSpeed: 100,
+      typeSpeed: 80,
       backSpeed: 60,
       loop: true
     });
