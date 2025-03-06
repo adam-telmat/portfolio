@@ -1,0 +1,633 @@
+/* Effet futuriste pour la carte Fruit Slicer */
+.futuristic-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.futuristic-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.futuristic-image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  filter: brightness(1.3);
+}
+
+.futuristic-card:hover .futuristic-image {
+  transform: scale(1.1);
+  filter: brightness(1.5);
+}
+
+.futuristic-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.futuristic-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(to right, transparent 49.5%, rgba(0, 255, 255, 0.3) 50%, transparent 50.5%) 0 0 / 30px 100%,
+    linear-gradient(to bottom, transparent 49.5%, rgba(0, 255, 255, 0.3) 50%, transparent 50.5%) 0 0 / 100% 30px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.futuristic-scan {
+  position: absolute;
+  top: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, cyan, transparent);
+  box-shadow: 0 0 15px 3px cyan;
+  animation: scan 2s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.futuristic-card:hover .futuristic-lines,
+.futuristic-card:hover .futuristic-scan {
+  opacity: 1;
+}
+
+@keyframes scan {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* Effet de bordure futuriste */
+.futuristic-card .box {
+  position: relative;
+}
+
+.futuristic-card .box::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00ffff, transparent, #00ffff);
+  z-index: -1;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.futuristic-card:hover .box::before {
+  opacity: 1;
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Effet Data Analysis pour la deuxième carte */
+.data-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.data-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.data-image-container img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.data-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.data-chart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(76, 175, 80, 0) 0%, rgba(76, 175, 80, 0.8) 50%, rgba(76, 175, 80, 0) 100%),
+    linear-gradient(transparent 0%, transparent 40%, rgba(76, 175, 80, 0.8) 40%, rgba(76, 175, 80, 0.8) 43%, transparent 43%, transparent 60%, rgba(76, 175, 80, 0.8) 60%, rgba(76, 175, 80, 0.8) 63%, transparent 63%, transparent 80%, rgba(76, 175, 80, 0.8) 80%, rgba(76, 175, 80, 0.8) 83%, transparent 83%);
+  background-size: 200% 100%, 100% 100%;
+  animation: moveChart 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.data-card:hover .data-overlay,
+.data-card:hover .data-chart {
+  opacity: 1;
+}
+
+.data-card:hover .box {
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.6);
+}
+
+@keyframes moveChart {
+  0% {
+    background-position: 100% 0, 0 0;
+  }
+  100% {
+    background-position: -100% 0, 0 0;
+  }
+}
+
+/* Effet Dashboard pour la troisième carte */
+.dashboard-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.dashboard-image-container img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+  filter: brightness(1);
+}
+
+.dashboard-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dashboard-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(rgba(255, 152, 0, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 152, 0, 0.3) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0;
+  transform: perspective(500px) rotateX(30deg);
+  transition: all 0.5s ease;
+}
+
+.dashboard-scan {
+  position: absolute;
+  top: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, #ff9800, transparent);
+  box-shadow: 0 0 15px 3px #ff9800;
+  animation: dashboardScan 2s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dashboard-dots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 152, 0, 0.8) 0%, rgba(255, 152, 0, 0) 5%),
+    radial-gradient(circle at 80% 40%, rgba(255, 152, 0, 0.8) 0%, rgba(255, 152, 0, 0) 5%),
+    radial-gradient(circle at 40% 80%, rgba(255, 152, 0, 0.8) 0%, rgba(255, 152, 0, 0) 5%),
+    radial-gradient(circle at 60% 10%, rgba(255, 152, 0, 0.8) 0%, rgba(255, 152, 0, 0) 5%);
+  animation: dashboardDots 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.dashboard-card:hover .dashboard-overlay,
+.dashboard-card:hover .dashboard-grid,
+.dashboard-card:hover .dashboard-scan,
+.dashboard-card:hover .dashboard-dots {
+  opacity: 1;
+}
+
+.dashboard-card:hover .dashboard-image-container img {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+}
+
+.dashboard-card .box {
+  position: relative;
+}
+
+.dashboard-card .box::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff9800, transparent, #ff9800);
+  z-index: -1;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dashboard-card:hover .box::before {
+  opacity: 1;
+  animation: rotateDashboard 3s linear infinite;
+}
+
+.dashboard-card:hover .box {
+  box-shadow: 0 0 20px rgba(255, 152, 0, 0.6);
+}
+
+@keyframes dashboardScan {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes dashboardDots {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%, 20% 80%, 80% 20%, 60% 40%;
+  }
+}
+
+@keyframes rotateDashboard {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Effet Pokémon pour la quatrième carte */
+.pokemon-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.pokemon-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.pokemon-image-container img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.pokemon-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pokemon-balls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle, rgba(255, 0, 0, 0.8) 5px, transparent 5px);
+  background-size: 50px 50px;
+  animation: pokemonBalls 3s infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.pokemon-scan {
+  position: absolute;
+  top: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, #ff3d00, transparent);
+  box-shadow: 0 0 15px 3px #ff3d00;
+  animation: pokemonScan 2s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pokemon-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.8) 0%, rgba(255, 215, 0, 0) 5%),
+    radial-gradient(circle at 80% 40%, rgba(255, 215, 0, 0.8) 0%, rgba(255, 215, 0, 0) 5%),
+    radial-gradient(circle at 40% 80%, rgba(255, 215, 0, 0.8) 0%, rgba(255, 215, 0, 0) 5%),
+    radial-gradient(circle at 60% 10%, rgba(255, 215, 0, 0.8) 0%, rgba(255, 215, 0, 0) 5%);
+  animation: pokemonParticles 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.pokemon-card:hover .pokemon-overlay,
+.pokemon-card:hover .pokemon-balls,
+.pokemon-card:hover .pokemon-scan,
+.pokemon-card:hover .pokemon-particles {
+  opacity: 1;
+}
+
+.pokemon-card:hover .pokemon-image-container img {
+  transform: scale(1.1);
+}
+
+.pokemon-card .box {
+  position: relative;
+}
+
+.pokemon-card .box::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff3d00, transparent, #ffd700);
+  z-index: -1;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.pokemon-card:hover .box::before {
+  opacity: 1;
+  animation: rotatePokemon 3s linear infinite;
+}
+
+.pokemon-card:hover .box {
+  box-shadow: 0 0 20px rgba(255, 61, 0, 0.6);
+}
+
+@keyframes pokemonBalls {
+  0% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pokemonScan {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes pokemonParticles {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%, 20% 80%, 80% 20%, 60% 40%;
+  }
+}
+
+@keyframes rotatePokemon {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Effet Machine Learning pour la quatrième carte */
+.ml-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.ml-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.ml-image-container img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.ml-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ml-nodes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle, rgba(156, 39, 176, 0.8) 2px, transparent 2px);
+  background-size: 30px 30px;
+  animation: pulse 2s infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.ml-connections {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(45deg, transparent 45%, rgba(156, 39, 176, 0.3) 50%, transparent 55%),
+    linear-gradient(135deg, transparent 45%, rgba(156, 39, 176, 0.3) 50%, transparent 55%);
+  background-size: 30px 30px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.ml-scan {
+  position: absolute;
+  top: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, #9c27b0, transparent);
+  box-shadow: 0 0 15px 3px #9c27b0;
+  animation: mlScan 2s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ml-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(156, 39, 176, 0.8) 0%, rgba(156, 39, 176, 0) 5%),
+    radial-gradient(circle at 80% 40%, rgba(156, 39, 176, 0.8) 0%, rgba(156, 39, 176, 0) 5%),
+    radial-gradient(circle at 40% 80%, rgba(156, 39, 176, 0.8) 0%, rgba(156, 39, 176, 0) 5%),
+    radial-gradient(circle at 60% 10%, rgba(156, 39, 176, 0.8) 0%, rgba(156, 39, 176, 0) 5%);
+  animation: mlParticles 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.ml-card:hover .ml-overlay,
+.ml-card:hover .ml-nodes,
+.ml-card:hover .ml-connections,
+.ml-card:hover .ml-scan,
+.ml-card:hover .ml-particles {
+  opacity: 1;
+}
+
+.ml-card:hover .ml-image-container img {
+  transform: scale(1.1);
+}
+
+.ml-card .box {
+  position: relative;
+}
+
+.ml-card .box::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #9c27b0, transparent, #9c27b0);
+  z-index: -1;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ml-card:hover .box::before {
+  opacity: 1;
+  animation: rotateML 3s linear infinite;
+}
+
+.ml-card:hover .box {
+  box-shadow: 0 0 20px rgba(156, 39, 176, 0.6);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes mlScan {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes mlParticles {
+  0% {
+    background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%, 20% 80%, 80% 20%, 60% 40%;
+  }
+}
+
+@keyframes rotateML {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+} 

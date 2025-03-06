@@ -17,10 +17,6 @@ html {
   background: #000000;
 }
 
-
-
-
-
 ::-webkit-scrollbar-thumb {
   border-radius: 12px;
   background: linear-gradient(135deg, #f57308, #fff, rgb(11, 242, 7));
@@ -915,5 +911,367 @@ footer span a:hover {
     width: 35px;
     font-size: 23px;
     line-height: 38px;
+  }
+}
+
+/* Ajout du style pour les liens de projet */
+.projects .carousel .card .box .project-link {
+    display: inline-block;
+    background: crimson;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.projects .carousel .card .box .project-link:hover {
+    color: crimson;
+    background: none;
+}
+
+/* Rendre les cartes de projet plus interactives */
+.projects .carousel .card {
+    transition: all 0.3s ease;
+}
+
+.projects .carousel .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+/* Assurer que les images des projets ont une taille uniforme */
+.projects .carousel .card .box img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+/* Effet futuriste pour la carte Fruit Slicer */
+.futuristic-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.futuristic-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.futuristic-image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.futuristic-card:hover .futuristic-image {
+  transform: scale(1.1);
+}
+
+.futuristic-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.futuristic-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(to right, transparent 49.5%, rgba(0, 255, 255, 0.3) 50%, transparent 50.5%) 0 0 / 30px 100%,
+    linear-gradient(to bottom, transparent 49.5%, rgba(0, 255, 255, 0.3) 50%, transparent 50.5%) 0 0 / 100% 30px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.futuristic-scan {
+  position: absolute;
+  top: 0;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, transparent, cyan, transparent);
+  box-shadow: 0 0 15px 3px cyan;
+  animation: scan 2s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.futuristic-card:hover .futuristic-lines,
+.futuristic-card:hover .futuristic-scan {
+  opacity: 1;
+}
+
+@keyframes scan {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* Effet de bordure futuriste */
+.futuristic-card .box {
+  position: relative;
+}
+
+.futuristic-card .box::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #00ffff, transparent, #00ffff);
+  z-index: -1;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.futuristic-card:hover .box::before {
+  opacity: 1;
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Effet Data Analysis pour la deuxième carte */
+.data-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.data-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.data-image-container img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.data-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.data-chart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(76, 175, 80, 0) 0%, rgba(76, 175, 80, 0.8) 50%, rgba(76, 175, 80, 0) 100%),
+    linear-gradient(transparent 0%, transparent 40%, rgba(76, 175, 80, 0.8) 40%, rgba(76, 175, 80, 0.8) 43%, transparent 43%, transparent 60%, rgba(76, 175, 80, 0.8) 60%, rgba(76, 175, 80, 0.8) 63%, transparent 63%, transparent 80%, rgba(76, 175, 80, 0.8) 80%, rgba(76, 175, 80, 0.8) 83%, transparent 83%);
+  background-size: 200% 100%, 100% 100%;
+  animation: moveChart 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.data-card:hover .data-overlay,
+.data-card:hover .data-chart {
+  opacity: 1;
+}
+
+.data-card:hover .box {
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.6);
+}
+
+@keyframes moveChart {
+  0% {
+    background-position: 100% 0, 0 0;
+  }
+  100% {
+    background-position: -100% 0, 0 0;
+  }
+}
+
+/* Effet Dashboard pour la troisième carte */
+.dashboard-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.dashboard-image-container img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+  filter: brightness(1);
+}
+
+.dashboard-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dashboard-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(rgba(255, 152, 0, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 152, 0, 0.3) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0;
+  transform: perspective(500px) rotateX(30deg);
+  transition: all 0.5s ease;
+}
+
+.dashboard-card:hover .dashboard-overlay,
+.dashboard-card:hover .dashboard-grid {
+  opacity: 1;
+}
+
+.dashboard-card:hover .dashboard-image-container img {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+}
+
+.dashboard-card:hover .box {
+  box-shadow: 0 0 20px rgba(255, 152, 0, 0.6);
+}
+
+/* Effet Machine Learning pour la quatrième carte */
+.ml-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.ml-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.ml-image-container img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.ml-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ml-nodes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.ml-nodes::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgba(156, 39, 176, 0.8) 2px, transparent 2px);
+  background-size: 30px 30px;
+  animation: pulse 2s infinite;
+}
+
+.ml-nodes::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(156, 39, 176, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(156, 39, 176, 0.3) 1px, transparent 1px);
+  background-size: 15px 15px;
+  opacity: 0.5;
+}
+
+.ml-card:hover .ml-overlay,
+.ml-card:hover .ml-nodes {
+  opacity: 1;
+}
+
+.ml-card:hover .ml-image-container img {
+  transform: scale(1.1);
+}
+
+.ml-card:hover .box {
+  box-shadow: 0 0 20px rgba(156, 39, 176, 0.6);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.3;
   }
 }
