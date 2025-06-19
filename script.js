@@ -7,7 +7,10 @@ $(document).ready(function () {
         $(".navbar").removeClass("sticky");
       }
   
-    
+      // Animate skill circles when in view
+      if ($(window).scrollTop() + $(window).height() > $('.skills').offset().top + 100) {
+        $('.skills').addClass('animate');
+      }
     });
   
     //  slide-up script  //
@@ -34,7 +37,7 @@ $(document).ready(function () {
     //  Typing Text Animation  //
   
     var typed = new Typed(".typing", {
-      strings: ["Data Analyst in Certification Process | AI Specialization ", ""],
+      strings: ["Growth Hacker Tech & Business", "Spécialiste IA/Data", "Future Head of Growth", "Agent IA Developer", "Business Scaler"],
       typeSpeed: 80,
       backSpeed: 60,
       loop: true
@@ -42,8 +45,10 @@ $(document).ready(function () {
   
     var typed = new Typed(".typing-2", {
       strings: [
-        "Data Analyst in Certification Process | AI Specialization ",
-        
+        "Growth Hacker Tech & Business",
+        "Spécialiste IA/Data",
+        "Future Head of Growth",
+        "Agent IA Developer"
       ],
       typeSpeed: 80,
       backSpeed: 60,
